@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
   def index
-    # render html: 'Here a list of posts froma given user.'
+    @current_user = current_user
+    @user = User.find(params[:user_id])
+    @posts_comments = @user.posts_desc_order.includes(:comments)
   end
 
   def show
-    # render html: 'Here is the details for a given post.'
+    @current_user = current_user
+    @post = Post.find(params[:id])
   end
 end

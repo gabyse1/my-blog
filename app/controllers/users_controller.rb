@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   def index
-    # render html: 'Here is a list of users.'
+    @users = User.all.order(id: :asc)
+    @current_user = current_user
   end
 
   def show
-    # render html: 'Here is the details for a given user.'
+    @current_user = current_user
+    @user = User.find(params[:id])
   end
 end
