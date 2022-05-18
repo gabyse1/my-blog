@@ -45,9 +45,9 @@ RSpec.describe Comment, type: :model do
 
   describe '#method' do
     user = User.create(name: 'Gaby', photo: 'photo Gaby', bio: 'bio Gaby', postsCounter: 0)
-    post = Post.create(user: user, title: 'post A', text: 'text A', commentsCounter: 0, likesCounter: 0)
-    comment_a = Comment.create(user: user, post: post, text: 'comment A')
-    comment_b = Comment.create(user: user, post: post, text: 'comment B')
+    post = Post.create(user:, title: 'post A', text: 'text A', commentsCounter: 0, likesCounter: 0)
+    Comment.create(user:, post:, text: 'comment A')
+    comment_b = Comment.create(user:, post:, text: 'comment B')
 
     context '#increment_comments_counter' do
       it 'should incremment the Post&apos;s commentsCounter attribute to from 0 to 2' do

@@ -68,15 +68,15 @@ RSpec.describe Post, type: :model do
 
   describe '#method' do
     user = User.create(name: 'Gaby', photo: 'photo Gaby', bio: 'bio Gaby', postsCounter: 0)
-    post_a = Post.create(user: user, title: 'post A', text: 'text A', commentsCounter: 0, likesCounter: 0)
-    post_b = Post.create(user: user, title: 'post B', text: 'text B', commentsCounter: 0, likesCounter: 0)
-    comment_a = Comment.create(user: user, post: post_a, text: 'comment A')
-    comment_b = Comment.create(user: user, post: post_a, text: 'comment B')
-    comment_c = Comment.create(user: user, post: post_a, text: 'comment C')
-    comment_d = Comment.create(user: user, post: post_a, text: 'comment D')
-    comment_e = Comment.create(user: user, post: post_a, text: 'comment E')
-    comment_f = Comment.create(user: user, post: post_a, text: 'comment F')
-    comment_g = Comment.create(user: user, post: post_a, text: 'comment G')
+    post_a = Post.create(user:, title: 'post A', text: 'text A', commentsCounter: 0, likesCounter: 0)
+    post_b = Post.create(user:, title: 'post B', text: 'text B', commentsCounter: 0, likesCounter: 0)
+    Comment.create(user:, post: post_a, text: 'comment A')
+    Comment.create(user:, post: post_a, text: 'comment B')
+    Comment.create(user:, post: post_a, text: 'comment C')
+    Comment.create(user:, post: post_a, text: 'comment D')
+    Comment.create(user:, post: post_a, text: 'comment E')
+    Comment.create(user:, post: post_a, text: 'comment F')
+    Comment.create(user:, post: post_a, text: 'comment G')
 
     context '#most_recent_comments' do
       it 'should get the 5 most recent posts' do

@@ -37,7 +37,7 @@ RSpec.describe Like, type: :model do
 
   context '#uniqueness' do
     it 'A given user and a post must be added to likes table only once' do
-      first_record = Like.create(user: user_subject, post: post_subject)
+      Like.create(user: user_subject, post: post_subject)
       second_record = Like.create(user: user_subject, post: post_subject)
       expect(second_record.errors.full_messages).to include('User has already been taken')
     end
@@ -47,8 +47,8 @@ RSpec.describe Like, type: :model do
     user_a = User.create(name: 'Gaby', photo: 'photo Gaby', bio: 'bio Gaby', postsCounter: 0)
     user_b = User.create(name: 'Sara', photo: 'photo Sara', bio: 'bio Sara', postsCounter: 0)
     post = Post.create(user: user_a, title: 'post A', text: 'text A', commentsCounter: 0, likesCounter: 0)
-    like_a = Like.create(user: user_a, post: post)
-    like_b = Like.create(user: user_b, post: post)
+    Like.create(user: user_a, post:)
+    like_b = Like.create(user: user_b, post:)
 
     context '#increment_likes_counter' do
       it 'should incremment the Post&apos;s likesCounter attribute to from 0 to 2' do

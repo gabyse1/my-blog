@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import 'style_variables';
+@import 'style_variables.css.scss';
 
 *,
 *::before,
@@ -69,7 +69,11 @@ a.btn:hover {
   color: $white;
 }
 
-h1, h2, h3, h4, p {
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0;
   margin-bottom: 0.5rem;
 }
@@ -123,11 +127,9 @@ header {
 
 section {
   margin-top: 5rem;
-  
+
   .container {
-    > * {
-      margin-bottom: 1rem;
-    }
+    gap: 1rem;
   }
 }
 
@@ -165,6 +167,11 @@ section {
     align-items: center;
   }
 
+  span {
+    font-weight: 500;
+    color: $blue;
+  }
+
   > *:hover {
     span {
       color: $accent;
@@ -185,11 +192,6 @@ section {
   button:hover {
     color: $accent;
   }
-
-  span {
-    font-weight: 500;
-    color: $blue;
-  }
 }
 
 .card__box-user {
@@ -203,7 +205,7 @@ section {
     max-width: 7rem;
     max-height: 7rem;
     overflow: hidden;
-    
+
     img {
       max-width: 7.5rem;
       height: auto;

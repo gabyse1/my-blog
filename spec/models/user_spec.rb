@@ -45,11 +45,11 @@ RSpec.describe User, type: :model do
 
   describe '#method' do
     user = User.create(name: 'Gaby', photo: 'photo Gaby', bio: 'bio Gaby', postsCounter: 0)
-    post_a = Post.create(user: user, title: 'post A', text: 'text A', commentsCounter: 0, likesCounter: 0)
-    post_b = Post.create(user: user, title: 'post B', text: 'text B', commentsCounter: 0, likesCounter: 0)
-    post_c = Post.create(user: user, title: 'post C', text: 'text C', commentsCounter: 0, likesCounter: 0)
-    post_d = Post.create(user: user, title: 'post D', text: 'text D', commentsCounter: 0, likesCounter: 0)
-    post_e = Post.create(user: user, title: 'post E', text: 'text E', commentsCounter: 0, likesCounter: 0)
+    Post.create(user:, title: 'post A', text: 'text A', commentsCounter: 0, likesCounter: 0)
+    Post.create(user:, title: 'post B', text: 'text B', commentsCounter: 0, likesCounter: 0)
+    Post.create(user:, title: 'post C', text: 'text C', commentsCounter: 0, likesCounter: 0)
+    Post.create(user:, title: 'post D', text: 'text D', commentsCounter: 0, likesCounter: 0)
+    Post.create(user:, title: 'post E', text: 'text E', commentsCounter: 0, likesCounter: 0)
 
     context '#most_recent_posts' do
       it 'should get the 3 most recent posts' do
