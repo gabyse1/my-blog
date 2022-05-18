@@ -2,6 +2,7 @@
 A blog website that shows the list of posts and empowers readers to interact with them by adding comments and liking posts.
 
 ![screenshot-desktop](mb-screenshot-desktop.png)
+
 ![screenshot-mobile](mb-screenshot-mobile.png)
 
 
