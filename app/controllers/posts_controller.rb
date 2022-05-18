@@ -15,15 +15,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.new(post_params)
+    @current_user = current_user
+    @post = @current_user.posts.new(post_params)
     @post.commentsCounter = 0
     @post.likesCounter = 0
     if @post.save
       flash[:success] = 'Post saved successfully'
-      redirect_to user_posts_url(current_user.id)
+      redirect_to user_posts_url(@current_user.id)
     else
       flash.now[:error] = @post.errors.full_messages.to_sentence
-      render :new, status: 422
+      render :new, locals: { user: @current_user }, status: 422
     end
   end
 
