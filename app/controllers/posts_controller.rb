@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
     @current_user = current_user
     @user = User.find(params[:user_id])
-    @posts_comments = @user.posts_desc_order.includes(:comments)
+    @posts_and_comments = @user.posts_desc_order.includes(:comments)
   end
 
   def show
