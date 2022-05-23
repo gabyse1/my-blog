@@ -14,6 +14,8 @@
   <%= render 'layouts/header', user: @current_user %>
   <section class="main_section">
     <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     <%= yield %>
     </div>
   </section>
