@@ -11,14 +11,18 @@
   </head>
 
   <body>
-  <%= render 'layouts/header', user: @current_user %>
-  <section class="main_section">
-    <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <%= yield %>
-    </div>
-  </section>
-  <%= render partial: 'layouts/footer' %>
+    <% if user_signed_in? %>
+    <%= render 'layouts/header', current_user: @current_user %>
+    <% end %>
+    <section class="main_section">
+      <div class="container">
+        <div class="box-block">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+        <%= yield %>
+      </div>
+    </section>
+    <%= render partial: 'layouts/footer' %>
   </body>
 </html>
