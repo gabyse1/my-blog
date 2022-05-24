@@ -268,39 +268,61 @@ section {
   .form__title {
     margin-bottom: 1rem;
   }
+}
 
-  form {
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+
+  .field {
+    width: 100%;
+
+    &:only-child {
+      width: 100%;
+    }
+
+    @include mq {
+      width: 60%;
+    }
+  }
+
+  .field-horizontal {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
   }
+}
 
-  input[type=text],
-  input[type=text]:focus,
-  textarea,
-  textarea:focus {
-    padding: 0.5rem;
-    border: 1px solid $gray-dark;
-    outline: 0 none;
-  }
+input,
+textarea,
+input:focus,
+textarea:focus {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid $gray-dark;
+  outline: 0 none;
+}
 
-  input[type=submit] {
-    width: 100px;
-    padding: 0.5rem 0;
-    background-color: transparent;
-    border: 1px solid $accent;
-    outline: none;
-    color: $accent;
-    cursor: pointer;
-    align-self: center;
-    transition: color, background-color 250ms ease-in-out;
-  }
+input[type=checkbox] {
+  width: auto;
+}
 
-  input[type=submit]:hover {
-    background-color: $accent;
-    color: $white;
-  }
+input[type=submit] {
+  width: auto;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid $accent;
+  outline: none;
+  color: $accent;
+  cursor: pointer;
+  align-self: center;
+  transition: color, background-color 250ms ease-in-out;
+}
+
+input[type=submit]:hover {
+  background-color: $accent;
+  color: $white;
 }
 
 .alert {
@@ -313,6 +335,21 @@ section {
 
 .alert-error {
   color: $red;
+}
+
+.box-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  a {
+    padding: 0;
+  }
+}
+
+.card__box-subnav {
+  display: flex;
+  justify-content: flex-end;
 }
 
 footer {
