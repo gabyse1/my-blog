@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :likes, class_name: 'Like', foreign_key: 'user_id', inverse_of: :user, dependent: :destroy
 
   validates :name, presence: true
+  validates :bio, presence: true
+  validates :photo, presence: true
   validates :postsCounter, presence: true, numericality: { only_integer: true },
                            comparison: { greater_than_or_equal_to: 0 }
 
