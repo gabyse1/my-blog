@@ -1,9 +1,8 @@
 class CommentsController < ApplicationController
   def index
     @current_user = current_user
-    @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
-    @comments = @post.includes(:comments)
+    @comments = @post.comments
     render json: @comments, status: :ok
   end
 
