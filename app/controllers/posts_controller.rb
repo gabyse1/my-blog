@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     @current_user = current_user
     @user = User.find(params[:user_id])
     @posts_and_comments = @user.posts_desc_order.includes(:comments)
+    render json: @posts_and_comments, status: :ok
   end
 
   def show
