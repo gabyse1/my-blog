@@ -7,9 +7,5 @@ class UsersController < ApplicationController
   def show
     @current_user = current_user
     @user = User.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.json { render json: @user.to_json(include: [:posts]) }
-    end
   end
 end
