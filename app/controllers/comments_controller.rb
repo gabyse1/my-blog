@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   def new
     @current_user = current_user
     @post = Post.find(params[:post_id])
-    render :new, locals: { user: @current_user, post: @post }
   end
 
   def create

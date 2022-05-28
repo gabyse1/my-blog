@@ -78,3 +78,7 @@ end
 gem 'devise'
 
 gem 'cancancan', '~> 1.9'
+
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'jwt'
