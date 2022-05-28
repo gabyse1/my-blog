@@ -23,6 +23,12 @@ class User < ApplicationRecord
   def posts_desc_order
     posts.order(created_at: :desc)
   end
+  
+  def generate_jwt
+    JWT.encode({ id:,
+                 exp: 60.days.from_now.to_i },
+               Rails.application.secrets.secret_key_base)
+  end
 
   private
 
