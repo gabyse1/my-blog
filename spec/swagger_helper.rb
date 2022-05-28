@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.configure do |config|
@@ -27,14 +25,14 @@ RSpec.configure do |config|
           type: 'object',
           properties: {
             id: { type: :integer, example: '1' },
-            name: { type: :string, example: "sara" },
-            email: { type: :string, example: "sara@gmail.com" },
-            photo:{ type: :string, example: "user-profile.png" },
-            bio: { type: :string, example: "Enter your abstract bio here." },
-            role: { type: :string, example: "default" },
+            name: { type: :string, example: 'sara' },
+            email: { type: :string, example: 'sara@gmail.com' },
+            photo: { type: :string, example: 'user-profile.png' },
+            bio: { type: :string, example: 'Enter your abstract bio here.' },
+            role: { type: :string, example: 'default' },
             postsCounter: { type: :integer, example: '4' },
-            created_at: { type: :string, example: "2022-05-25 23:46:08.714149000 +0000" },
-            updated_at: { type: :string, example: "2022-05-25 23:55:10.593515000 +0000" }
+            created_at: { type: :string, example: '2022-05-25 23:46:08.714149000 +0000' },
+            updated_at: { type: :string, example: '2022-05-25 23:55:10.593515000 +0000' }
           }
         },
         Post: {
