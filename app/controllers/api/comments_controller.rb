@@ -17,7 +17,7 @@ class Api::CommentsController < ApplicationController
     if @comment.save
       render json: @comment, status: :ok
     else
-      render json: {error: 'Error creating the comment.'}
+      render json: { error: 'Error creating the comment.' }
     end
   end
 
