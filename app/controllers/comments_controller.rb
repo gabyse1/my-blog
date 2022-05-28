@@ -1,9 +1,4 @@
 class CommentsController < ApplicationController
-  protect_from_forgery with: :null_session
-  skip_before_action :verify_authenticity_token, only: :create
-
-  load_and_authorize_resource
-
   def new
     @current_user = current_user
     @post = Post.find(params[:post_id])
