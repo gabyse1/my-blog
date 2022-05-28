@@ -6,5 +6,5 @@
     <%= tag.h1(user.name, class: 'card__title') %>
     <p class="card__counters">Number of posts: <%= tag.span(user.postsCounter) %></p>
   </div>
-  <%= link_to '', user_path(user.id), class: 'card__hidden-link' %>
+  <%= link_to '', user_path(user.id), id: "link_user-#{user.id}", class: 'card__hidden-link' %>
 </div>
