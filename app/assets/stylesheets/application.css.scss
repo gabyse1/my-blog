@@ -163,17 +163,6 @@ section {
     align-items: center;
     margin-left: 1rem;
   }
-
-  span {
-    font-weight: 500;
-    color: $blue;
-  }
-
-  > *:hover {
-    span {
-      color: $accent;
-    }
-  }
 }
 
 .card__box-user {
@@ -233,7 +222,7 @@ section {
   }
 }
 
-.card__box-comments {
+.card__box-comment {
   margin-bottom: 0.5rem;
   display: flex;
 
