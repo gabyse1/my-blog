@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  before(:each) do
-    @user_test = User.create(name: 'Gaby user', photo: 'url/photo', bio: 'Gaby biography', postsCounter: 0)
+  before :all do
+    User.destroy_all
+    @user = User.create(name: 'gaby', email: 'gaby@gmail.com', password: 'password', confirmed_at: Time.now)
   end
 
   describe 'GET #index' do
@@ -22,7 +23,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET#show' do
-    before { get user_path(@user_test.id) }
+    before { get user_path(@user.id) }
 
     it 'is a success' do
       expect(response).to have_http_status(:ok)
