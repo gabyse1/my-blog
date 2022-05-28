@@ -1,0 +1,91 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/users/{id}/posts":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list the user's posts
+      tags:
+      - posts
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    items:
+                      "$ref": "#/definitions/Post"
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: '1'
+      name:
+        type: string
+        example: sara
+      email:
+        type: string
+        example: sara@gmail.com
+      photo:
+        type: string
+        example: user-profile.png
+      bio:
+        type: string
+        example: Enter your abstract bio here.
+      role:
+        type: string
+        example: default
+      postsCounter:
+        type: integer
+        example: '4'
+      created_at:
+        type: string
+        example: '2022-05-25 23:46:08.714149000 +0000'
+      updated_at:
+        type: string
+        example: '2022-05-25 23:55:10.593515000 +0000'
+  Post:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: '1'
+      title:
+        type: string
+        example: My first post
+      text:
+        type: string
+        example: The body of my first post
+      commentsCounter:
+        type: integer
+        example: '1'
+      likesCounter:
+        type: integer
+        example: '1'
+      user:
+        "$ref": "#/definitions/User"
+      created_at:
+        type: string
+        example: Fri, 27 May 2022 23:56:51.472460000 UTC +00:00
+      updated_at:
+        type: string
+        example: Fri, 27 May 2022 23:56:51.472460000 UTC +00:00
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
